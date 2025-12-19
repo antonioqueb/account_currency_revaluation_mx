@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_account_revaluation_wizard_form" model="ir.ui.view">
+        <field name="name">account.revaluation.wizard.form</field>
+        <field name="model">account.revaluation.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Currency Revaluation">
+                <group>
+                    <group>
+                        <field name="date"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                    <group>
+                        <field name="journal_id"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Generate Entry" name="generate_revaluation_entries" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_account_revaluation_wizard" model="ir.actions.act_window">
+        <field name="name">Currency Revaluation Report</field>
+        <field name="res_model">account.revaluation.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_revaluation_wizard" 
+              name="Currency Revaluation" 
+              parent="account.menu_finance_entries_closing" 
+              action="action_account_revaluation_wizard" 
+              sequence="40"/>
+</odoo>

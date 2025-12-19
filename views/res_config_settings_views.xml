@@ -1,0 +1,37 @@
+<odoo>
+    <record id="res_config_settings_view_form_reval" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.reval</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='default_accounts']" position="after">
+                <block title="Multi-Currency Revaluation (MX)" name="revaluation_settings">
+                    <setting help="Accounts used for unrealized exchange differences">
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="revaluation_gain_account_id" class="col-lg-3 o_light_label"/>
+                                <field name="revaluation_gain_account_id"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="revaluation_loss_account_id" class="col-lg-3 o_light_label"/>
+                                <field name="revaluation_loss_account_id"/>
+                            </div>
+                        </div>
+                    </setting>
+                    <setting groups="account_currency_revaluation_mx.group_additional_provisioning" help="Provisions according to MX/FR/CH rules">
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="provision_bs_loss_account_id" class="col-lg-3 o_light_label"/>
+                                <field name="provision_bs_loss_account_id"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="provision_pl_loss_account_id" class="col-lg-3 o_light_label"/>
+                                <field name="provision_pl_loss_account_id"/>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
