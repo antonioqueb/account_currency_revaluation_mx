@@ -7,7 +7,7 @@
         Módulo para la revaluación de moneda extranjera (USD a MXN).
         Permite configurar cuentas de provisión y generar asientos de ajuste de cierre.
     """,
-    'author': 'Custom Dev',
+    'author': 'Alphaqueb Consulting',
     'depends': ['account'],
     'data': [
         'security/security.xml',
