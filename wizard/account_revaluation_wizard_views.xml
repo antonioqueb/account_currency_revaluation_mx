@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- Vista del Formulario del Wizard -->
     <record id="view_account_revaluation_wizard_form" model="ir.ui.view">
         <field name="name">account.revaluation.wizard.form</field>
         <field name="model">account.revaluation.wizard</field>
@@ -22,6 +23,7 @@
         </field>
     </record>
 
+    <!-- Acción para abrir el Wizard -->
     <record id="action_account_revaluation_wizard" model="ir.actions.act_window">
         <field name="name">Currency Revaluation</field>
         <field name="res_model">account.revaluation.wizard</field>
@@ -29,9 +31,11 @@
         <field name="target">new</field>
     </record>
 
+    <!-- Menú corregido para Odoo 19 -->
+    <!-- Usamos account.menu_finance_entries (Asientos contables) como padre -->
     <menuitem id="menu_revaluation_wizard" 
               name="Currency Revaluation" 
-              parent="account.menu_finance_entries_closing" 
+              parent="account.menu_finance_entries" 
               action="action_account_revaluation_wizard" 
-              sequence="40"/>
+              sequence="100"/>
 </odoo>
