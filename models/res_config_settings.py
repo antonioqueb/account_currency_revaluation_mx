@@ -1,6 +1,6 @@
 from odoo import fields, models
 
-class ResConfigSettings(旋.TransientModel):
+class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     revaluation_loss_account_id = fields.Many2one(
