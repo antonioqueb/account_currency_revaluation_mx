@@ -1,5 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="group_additional_provisioning" model="res.groups">
-        <field name="name">Additional provisioning entries posting</field>
-    </record>
+    <data noupdate="1">
+        <record id="group_additional_provisioning" model="res.groups">
+            <field name="name">Additional provisioning entries posting</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+    </data>
 </odoo>
